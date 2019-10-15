@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="941545359c224a95a44f43ceb06f1059" Name="Diagram1">
+        <EntityTypeShape EntityType="THUONGMAIDIENTUModel.CUSTOMER" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="THUONGMAIDIENTUModel.CUSTOMER_EMAIL" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="THUONGMAIDIENTUModel.EMAIL" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="THUONGMAIDIENTUModel.sysdiagram" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="THUONGMAIDIENTUModel.FK_CUSTOMER_EMAIL_CUSTOMER" ManuallyRouted="false" />
+        <AssociationConnector Association="THUONGMAIDIENTUModel.FK_CUSTOMER_EMAIL_EMAIL" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Lab05.CUSTOMER_EMAIL>
+
+@{
+    ViewBag.Title = "Chi tiết chiến dịch";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int id = (int)ViewBag.Id;
+}
+
+<h2>Email</h2>
+
+@using (THUONGMAIDIENTUEntities db = new THUONGMAIDIENTUEntities())
+{
+    <table class="table">
+        <tr>
+            <th>
+                Khách hàng
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Tình trạng
+            </th>
+        </tr>
+
+        @foreach (var item in db.CUSTOMER_EMAIL.Where(x => x.IdEmail == id).ToList())
+        {
+            string status = "Chưa gửi";
+            if (item.IsRead == true)
+            {
+                status = "Đã mở";
+            }
+            else if (item.IsRead == false)
+            {
+                status = "Đã gửi";
+            }
+
+            <tr>
+                <td>
+                    @item.CUSTOMER.CustomerName
+                </td>
+                <td>
+                    @item.CUSTOMER.CustomerEmail
+                </td>
+                <td>
+                    @status
+                </td>
+            </tr>
+        }
+
+    </table>
+
+}

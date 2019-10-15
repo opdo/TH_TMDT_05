@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Trang chủ";
+}
+<style>
+    .map {
+        height: 400px
+    }
+</style>
+<div class="jumbotron">
+    <h1>Hệ thống xì-pam siêu cao cấp</h1>
+    <p class="lead">Hỗ trợ gửi mail và tracking người nhận có mở email hay chưa, nếu mở rồi thì thôi còn chưa mở thì thôi</p>
+    <p><a href="/Home/Email" class="btn btn-primary btn-lg">Vào email</a></p>
+</div>
+
+<div id="map" class="map"></div>
+
+<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+<script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function (L) { L.start({ "baseUrl": "mc.us20.list-manage.com", "uuid": "a2898b04479d4f23b776f2d89", "lid": "c0161cd1aa", "uniqueMethods": true }) })</script>
+
+<script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: 10.8020946, lng: 106.7124 },
+          zoom: 15
+        });
+      }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" async defer></script>

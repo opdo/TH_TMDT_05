@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Lab05.EMAIL>
+
+@{
+    ViewBag.Title = "Email";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Email</h2>
+
+<p>
+    @Html.ActionLink("Create New", "EmailCreate")
+</p>
+
+@using (THUONGMAIDIENTUEntities db = new THUONGMAIDIENTUEntities())
+{
+    <table class="table">
+        <tr>
+            <th>
+                Tiêu đề chiến dịch
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in db.EMAILs.ToList())
+        {
+            <tr>
+                <td>
+                    @item.EmailTitle
+                </td>
+                <td>
+
+                    @Html.ActionLink("Xem", "EmailDetails", new {  id=item.IdEmail  })
+                </td>
+            </tr>
+        }
+
+        
+    </table>
+
+}
